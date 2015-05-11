@@ -25,6 +25,8 @@
     <string name="preferences_show_notification_icon_sum" tools:ignore="StringFormatInvalid">Mostrar % icono de notificación en la barra de notificaciones</string>
     <string name="preferences_show_notification_title">Sólo Mostrar Notificación</string>
     <string name="preferences_show_notification_sum">Ver la notificación sin el icono de notificación</string>
+    <!-- preferences_show_notification_lockscreen_title is not used yet... -->
+    <string name="preferences_show_notification_lockscreen_title">Mostrar Notificacion en la Pantalla de bloqueo</string>
     <string name="preferences_alarm_condition_charging">Batería sobre</string>
     <string name="preferences_alarm_condition_discharging">Batería debajo</string>
     <string name="preferences_alarm_condition_overheated">Batería sobrecalentada</string>
@@ -51,9 +53,11 @@
     <string name="preferences_overlay_icon_configure_invalid">Incapaz de lanzar las configuraciones. Abre el paquete de iconos manualmente para configurar.</string>
     <string name="preferences_overlay_icon_notvalid_title">El Tema Seleccionado No Soporta Iconos Sobrepuestos</string>
     <string name="preferences_overlay_icon_notvalid_msg">Selecciona un tema diferente, e intenta de nuevo.\n\nIconos Sobrepuestos son únicamente soportodados por Paquetes de Iconos externos. Selecciona Conseguir Más Temas del menú de Tema de Iconos de Batería para encontrar un paquete de iconos externo. Todos los Paquetes de Iconos proporcionados por GSam Labs soportan iconos sobrepuestos. Los paquetes de iconos de terceros puede que no soporten la sobreposición.</string>
-    <string name="preferences_show_charging_animation_title">Mostrar animación mientras se carga</string> 
+    <string name="preferences_show_charging_animation_title">Mostrar animación mientras se carga</string>
     <string name="preferences_widget_color_screen_title">Opciones del Widget de Batería</string>
     <string name="preferences_app_theme_title">Usar Tema Oscuro</string>
+    <string name="preferences_app_theme_title2">App Theme</string>
+    <string name="preferences_app_theme_split">Toolbar Abajo</string>
     <string name="preferences_app_theme_sum">Usa un tema oscuro para la pantalla de la aplicación</string>
     <string name="preferences_time_left_title">Calcular Tiempo Restante</string>
     <string name="preferences_time_left_sum">Calcular tiempo restante basado en el uso sobre ésta escala de tiempo.</string>
@@ -63,7 +67,7 @@
     <string name="preferences_profiles_screen_summary"> Avanzado - Editar el perfil de uso de energia usado para calcular todos los valores</string>
     <string name="preferences_power_per_percent_reset_title">Restablecer Estimados de Tiempo Restante</string>
     <string name="preferences_power_per_percent_reset_summary">Restablecer estimados de tiempo restante. Úselo si su tiempo restante no es correcto. Actualmente %1$s / porciento calculado sobre %2$01d porcentajes</string>
-	<string name="preferences_power_per_percent_dlgtext">Valores separados por una coma en POWER_USED_PER_PERCENT_DROP,TOTAL_PERCENT_MEASURED.  Estos valores se actualizan constantemente - Cuanto más tiempo activo, más exacto se vuelve. Sin embargo, siempre que cambiemos algún valor en un perfil de energía, es necesario resetear este campo y dejar que la aplicación vuelva a generarlo.</string>   
+    <string name="preferences_power_per_percent_dlgtext">Valores separados por una coma en POWER_USED_PER_PERCENT_DROP,TOTAL_PERCENT_MEASURED.  Estos valores se actualizan constantemente - Cuanto más tiempo activo, más exacto se vuelve. Sin embargo, siempre que cambiemos algún valor en un perfil de energía, es necesario resetear este campo y dejar que la aplicación vuelva a generarlo.</string>
     <string name="preferences_power_per_percent_reset">Resetear</string>
     <string name="preferences_time_per_percent_title">Resetear el histórico del tiempo de descarga</string>
     <string name="preferences_time_per_percent_unkown">desconocido</string>
@@ -112,12 +116,14 @@
     <string name="preferences_menu_remove_alarm">Borrar Alarma</string>
     <string name="preferences_disable_animation_title">Desactivar los efectos de animación</string>
     <string name="preferences_disable_animation_sum">Desactiva los efectos de animación de pantalla para dispositivos con pocos recursos.</string>
-    
-    <!-- Preference Selection Arrays -->    
-    <string name="icon_themes_circle">Círculo</string>   
-    <string name="icon_themes_icsmono">Monocromo</string>   
-    <string name="icon_themes_trad">Tradicional</string>   
-    <string name="icon_themes_default">Sistema</string>   
+    <string name="preferences_contains_telephony_support_title">Contiene teléfono o módem de datos</string>
+    <string name="preferences_contains_telephony_support_sum">Algunos dispositivos reportan señal (telefonica / 3G / 4G / LTE) incorrectamente - especialmente en tablets.  Modifica esto solo si el valor reportado no es correcto.  Valor reportado:  %1s</string>
+
+    <!-- Preference Selection Arrays -->
+    <string name="icon_themes_circle">Círculo</string>
+    <string name="icon_themes_icsmono">Monocromo</string>
+    <string name="icon_themes_trad">Tradicional</string>
+    <string name="icon_themes_default">Sistema</string>
     <string name="icon_themes_getmore">Conseguir más temas</string>
     <string name="time_left_calc_dontshow">No mostrar tiempo normalizado</string>
     <string name="time_left_calc_last5">Ultimos 5 Minutos</string>
@@ -127,6 +133,9 @@
     <string name="stats_since_unplugged">Desde que se desenchufó</string>
     <string name="stats_since_charged">Desde la última carga completa</string>
     <string name="stats_since_custom">Desde referencia personalizada</string>
+    <string name="stats_since_screen_off">Desde Pantalla Apagada</string>
+    <string name="stats_since_now">Desde Ahora</string>
+    <string name="stats_since_ago">Desde hace %1s</string>
     <string name="pwer_profiles_mfg">Valores de fábrica</string>
     <string name="pwer_profiles_saved">Valores actuales guardados</string>
 
@@ -136,10 +145,9 @@
     <string name="process_suck_mon_header">%0$.1f%% de la batería consumida por:</string>
     <string name="process_suck_mon_nodata">No hay datos disponibles. No hay ninguna aplicación que haya consumido el recurso especificado durante el último ciclo de carga del dispositivo.</string>
     <string name="process_suck_mon_title_prefix">App Sucker - %1$s</string>
-    <string name="process_suck_mon_title_unplugged">%1$s (Desde última vez que se desenchufó)</string>
-    <string name="process_suck_mon_title_fullcharge">%1$s (Desde última carga completa)</string>
-    <string name="process_suck_mon_title_customref">%1$s (Desde referencia personalizada)</string>
-    <string name="procsuckmon_viewby_pwr">Ver % Carga Usada</string>
+    <!-- Suffix gets 'stats_since_X' replaced -->
+    <string name="process_suck_mon_title_suffix">%1$s (%2$s)</string>
+    <string name="procsuckmon_viewby_pwr">Ver % Energia Usada</string>
     <string name="procsuckmon_viewby_pwr_minforeground">Ver % Carga (Sólo CPU en segundo plano)</string>
     <string name="procsuckmon_viewby_cpu">Ver minutos de uso de la CPU</string>
     <string name="procsuckmon_viewby_cpu_minforeground">Ver CPU (Sólo CPU en segundo plano)</string>
@@ -186,22 +194,21 @@
     <string name="main_bluetooth_label">Bluetooth:</string>
     <string name="main_app_usage_label">Uso de aplicaciones:</string>
     <string name="main_app_usage_button">App Sucker</string>
-    <string name="main_android_batt_usage_button">Uso de batería - Ajustes del teléfono</string>    
+    <string name="main_android_batt_usage_button">Uso de batería - Ajustes del teléfono</string>
     <string name="main_android_batt_usage_failed">No se puede mostrar el uso de batería en ajustes...</string>
     <string name="main_tools_menu">Más</string>
     <string name="main_menu_charts">Gráficos</string>
     <string name="menu_whatsnew">Novedades</string>
     <string name="about_about">Acerca de</string>
-    <string name="main_stat_ref_label">* Basado en la referencia personalizada creada hace %1s</string>
     <string name="menu_set_custom_ref">Definir referencia personalizada</string>
     <string name="menu_remove_custom_ref">Borrar referencia personalizada</string>
     <string name="menu_refresh">Refrescar</string>
     <string name="main_refresh_toast">Estadísticas refrescadas\u2026</string>
     <string name="main_market_nomarket_msg">Función no disponible. No parece que haya ninguna aplicación del gplay instalada en tu dispositivo.</string>
     <string name="menu_help">Ayuda</string>
-    <string name="menu_send_debug_data">Enviar informe de errores</string>    
+    <string name="menu_send_debug_data">Enviar informe de errores</string>
     <string name="menu_send_debug_data_dlg_title">Enviar informe de errores usando:</string>
-    <string name="menu_send_debug_data_subject">GSam Labs - Battery Monitor - Error Report</string>  
+    <string name="menu_send_debug_data_subject">GSam Labs - Battery Monitor - Error Report</string>
     <string name="menu_send_debug_data_body">Por favor, introduce una descripción del error observado:\n\n</string>
     <string name="menu_review">Opina sobre GSam Battery Monitor</string>
     <string name="menu_enable_more_stats">Activar más estadísticas</string>
@@ -214,7 +221,7 @@
     <string name="main_tablet_battusage_fullcharge">%1$s%% Usada Durante %2$s (Desde la última carga completa)</string>
     <string name="main_tablet_battusage_customref">%1$s%% Usada Durante %2$s (Desde la referencia personalizada)</string>
     <string name="main_tablet_active_usage">Activo (%1$02d:%2$02d:%3$02d)</string>
-    <string name="main_tablet_standby_usage">Reposo (%1$02d:%2$02d:%3$02d)</string>    
+    <string name="main_tablet_standby_usage">Reposo (%1$02d:%2$02d:%3$02d)</string>
     <string name="rate_me_title">Valora GSam Battery Monitor</string>
     <string name="rate_me_msg">Te gusta GSam Battery Monitor? Por favor, invierte un segundo en darle una buena puntuación!\n\nNo te preocupes - No se te volverá a pedir.</string>
     <string name="rate_me_ok">Puntúa!</string>
@@ -237,7 +244,7 @@
     <string name="main_kitkat_nostats_helper_not_installed_correctly">La aplicación Root Companion no se ha instalado correctamente en /system/priv-app. Por favor inicia la aplicación y comprueba que se está bien instalada.</string>
     <string name="main_kitkat_nostats_launch_companion">Iniciar Root Companion</string>
     <string name="main_kitkat_nostats_install_companion">Instalar Root Companion</string>
-    
+
     <!-- Detail Screens (App Sucker & Wifi/Radio/Screen Usage) -->
     <string name="process_suck_mon_title_prefix_app">Detalles de la aplicación</string>
     <string name="process_suck_mon_title_prefix_wifi">Detalles de wifi</string>
@@ -252,13 +259,13 @@
     <string name="appdetail_minutes">%1$01dm %2$01ds</string>
     <string name="appdetail_minutes_decimal">%1$sm</string>
     <string name="appdetail_days">%1$01dd %2$01dh %3$01dm</string>
-    <string name="appdetail_days_twolevels">%1$01dd %2$01dh</string>    
+    <string name="appdetail_days_twolevels">%1$01dd %2$01dh</string>
     <string name="appdetail_days_twolevels_decimal">%1$01dd %2$sh</string>
     <string name="appdetail_hours">%1$01dh %2$01dm %3$01ds</string>
     <string name="appdetail_hours_twolevels">%1$01dh %2$01dm</string>
     <string name="appdetail_hours_twolevels_decimal">%1$01dh %2$sm</string>
     <string name="appdetail_details_button">Gestionar</string>
-    <string name="appdetail_details_button_wakelocks">Google Me</string>    
+    <string name="appdetail_details_button_wakelocks">Google Me</string>
     <string name="appdetail_details_adjustpower">Consejos para el ahorro de energía</string>
     <string name="appdetail_details_adjust_wifi">Apaga el wifi cuando no lo necesites usando el botón de Ajustes Wifi de encima.</string>
     <string name="appdetail_details_adjust_wifi_button">Ajustes Wifi</string>
@@ -268,59 +275,59 @@
     <string name="appdetail_details_adjust_screen_failedintent">Imposible iniciar Ajustes de Pantalla</string>
     <string name="detail_menu_export">Exportar</string>
     <string name="detail_menu_export_dlg_title">Exportar pantalla (Texto) Uso de datos</string>
-    <string name="detail_menu_export_subject">GSam Labs - Battery Monitor - Exportar Datos</string>    
-    <string name="appdetail_appuid">UID Aplicación:</string>  
-    <string name="appdetail_audio">Audio Encendido:</string>  
-    <string name="appdetail_bright">Brillo:</string>  
-    <string name="appdetail_bytesrec">Bytes Recibidos:</string>  
-    <string name="appdetail_bytessent">Bytes enviados:</string>  
-    <string name="appdetail_cpu">Uso CPU:</string>  
-    <string name="appdetail_cpu_backgroundonly">Uso CPU (Sólo en segundo plano):</string>  
-    <string name="appdetail_dark">Oscuro:</string>  
-    <string name="appdetail_data_enabled">Datos activados:</string>  
-    <string name="appdetail_dim">Oscurecer:</string>  
+    <string name="detail_menu_export_subject">GSam Labs - Battery Monitor - Exportar Datos</string>
+    <string name="appdetail_appuid">UID Aplicación:</string>
+    <string name="appdetail_audio">Audio Encendido:</string>
+    <string name="appdetail_bright">Brillo:</string>
+    <string name="appdetail_bytesrec">Bytes Recibidos:</string>
+    <string name="appdetail_bytessent">Bytes enviados:</string>
+    <string name="appdetail_cpu">Uso CPU:</string>
+    <string name="appdetail_cpu_backgroundonly">Uso CPU (Sólo en segundo plano):</string>
+    <string name="appdetail_dark">Oscuro:</string>
+    <string name="appdetail_data_enabled">Datos activados:</string>
+    <string name="appdetail_dim">Oscurecer:</string>
     <string name="appdetail_discharge_whileonoff">Descargar Mientras\nActivado/Desactivado:</string>
-    <string name="appdetail_gps">GPS:</string>  
+    <string name="appdetail_gps">GPS:</string>
     <string name="appdetail_high">Alto - %s:</string>
-    <string name="appdetail_keepawake">Despierto:</string>  
-    <string name="appdetail_light">Claro:</string>  
-    <string name="appdetail_low">Bajo - 0:</string>  
+    <string name="appdetail_keepawake">Despierto:</string>
+    <string name="appdetail_light">Claro:</string>
+    <string name="appdetail_low">Bajo - 0:</string>
     <string name="appdetail_med">Medio - %s:</string>
-    <string name="appdetail_medium">Medio:</string>  
-    <string name="appdetail_numwakes">Número de veces que ha despertado el dispositivo:</string>  
+    <string name="appdetail_medium">Medio:</string>
+    <string name="appdetail_numwakes">Número de veces que ha despertado el dispositivo:</string>
     <string name="appdetail_pct_power">\ \ \ \ \ \ \ \ % Carga</string>
     <string name="appdetail_pct_power_nospace">% Carga</string>
     <string name="appdetail_pct_time">% Hora</string>
-    <string name="appdetail_phoneon">Radio del teléfono activada:</string>  
-    <string name="appdetail_pwr_sysdata">Energía para datos del sistema:</string>  
-    <string name="appdetail_received">Recibido:</string>  
+    <string name="appdetail_phoneon">Radio del teléfono activada:</string>
+    <string name="appdetail_pwr_sysdata">Energía para datos del sistema:</string>
+    <string name="appdetail_received">Recibido:</string>
     <string name="appdetail_received_wifimobile">Recibido (Wifi / Móvil):</string>
-    <string name="appdetail_scanning">Buscando señal:</string>  
-    <string name="appdetail_screen_brightness">Brillo de pantalla:</string>  
-    <string name="appdetail_screenon">Pantalla activada:</string>  
-    <string name="appdetail_sensor_accelerometer">Acelerómetro:</string>  
-    <string name="appdetail_sensor_gravity">Gravedad:</string>  
-    <string name="appdetail_sensor_gyroscope">Giroscopio:</string>  
-    <string name="appdetail_sensor_light">Luz:</string>  
-    <string name="appdetail_sensor_lin_accel">Aceleración Lineal:</string>  
-    <string name="appdetail_sensor_magfield">Campo Magnético:</string>  
-    <string name="appdetail_sensor_orientation">Orientación:</string>  
-    <string name="appdetail_sensor_pressure">Presión:</string>  
-    <string name="appdetail_sensor_proximity">Proximidad:</string>  
-    <string name="appdetail_sensor_relhum">Humedad relativa:</string>  
-    <string name="appdetail_sensor_rotvector">Vector de rotación:</string>  
-    <string name="appdetail_sensor_temp">Temperatura:</string>  
-    <string name="appdetail_sent">Enviado:</string>  
-    <string name="appdetail_sent_wifimobile">Enviado (Wifi / Móvil):</string>  
+    <string name="appdetail_scanning">Buscando señal:</string>
+    <string name="appdetail_screen_brightness">Brillo de pantalla:</string>
+    <string name="appdetail_screenon">Pantalla activada:</string>
+    <string name="appdetail_sensor_accelerometer">Acelerómetro:</string>
+    <string name="appdetail_sensor_gravity">Gravedad:</string>
+    <string name="appdetail_sensor_gyroscope">Giroscopio:</string>
+    <string name="appdetail_sensor_light">Luz:</string>
+    <string name="appdetail_sensor_lin_accel">Aceleración Lineal:</string>
+    <string name="appdetail_sensor_magfield">Campo Magnético:</string>
+    <string name="appdetail_sensor_orientation">Orientación:</string>
+    <string name="appdetail_sensor_pressure">Presión:</string>
+    <string name="appdetail_sensor_proximity">Proximidad:</string>
+    <string name="appdetail_sensor_relhum">Humedad relativa:</string>
+    <string name="appdetail_sensor_rotvector">Vector de rotación:</string>
+    <string name="appdetail_sensor_temp">Temperatura:</string>
+    <string name="appdetail_sent">Enviado:</string>
+    <string name="appdetail_sent_wifimobile">Enviado (Wifi / Móvil):</string>
     <string name="appdetail_signal_stregth">Fuerza de la señal:</string>
     <string name="appdetail_total_appssystem">Total (Aplicaciones / Sistema):</string>
-    <string name="appdetail_video">Vídeo Activado:</string>  
-    <string name="appdetail_wakelocks">Número de despertares:</string>  
-    <string name="appdetail_wifiactive">Wifi Activo:</string>  
+    <string name="appdetail_video">Vídeo Activado:</string>
+    <string name="appdetail_wakelocks">Número de despertares:</string>
+    <string name="appdetail_wifiactive">Wifi Activo:</string>
     <string name="appdetail_wifion">Wifi Activado:</string>
-    <string name="appdetail_bytes">%d bytes</string>        
-    <string name="appdetail_mb">%.2f MB</string>           
-    <string name="appdetail_kb">%.2f KB</string>   
+    <string name="appdetail_bytes">%d bytes</string>
+    <string name="appdetail_mb">%.2f MB</string>
+    <string name="appdetail_kb">%.2f KB</string>
     <string name="appdetail_totaltime">Tiempo total (incluyendo activo):</string>
     <string name="appdetail_select_package">Selecciona paquete a gestionar</string>
 
@@ -334,7 +341,7 @@
     <string name="no">No</string>
     <string name="ok">Aceptar</string>
     <string name="error">Ocurrió un error</string>
-    
+
     <!-- Copied from the original BATTERY_STATS permission description -->
     <string name="permlab_batteryStats">leer estadisticas de la batería</string>
     <string name="permdesc_batteryStats">Permite a una aplicación leer los datos de uso de batería de bajo nivel actuales. Podría permitir a la aplicación encontrar información detallada acerca de qué aplicaciones usas.</string>
@@ -343,6 +350,7 @@
     <string name="main_chart_showtemp">Temperatura</string>
     <string name="main_chart_showother">Otros</string>
     <string name="main_chart_showradio">Señal telefónica</string>
+    <string name="main_chart_showrate">Proporción de Cambio</string>
     <string name="chart_menu_batthistory">Gráfico de histórico de batería</string>
     <string name="chart_menu_battdischarge">Gráfico de carga vs Porcentaje</string>
     <string name="notification_chargecomplete">Carga completa</string>
@@ -364,41 +372,60 @@
     <string name="chart_med">Medio</string>
     <string name="chart_screen">Pantalla</string>
     <string name="chart_signal">Señal telefónica</string>
+    <string name="chart_rateofchange">\u0394 %/Hora</string>
     <string name="chart_tempc">Temperatura de la batería \u00B0C</string>
     <string name="chart_tempf">Temperatura de la batería \u00B0F</string>
     <string name="chart_timeformat">HH:mm</string>
     <string name="chart_unknown">Desconocido</string>
     <string name="chart_wifi">Wifi</string>
-    
+
     <!-- About -->
     <string name="about_app_name">Acerca de GSam Battery Monitor</string>
-    <string name="about_version">Versión %1s</string>    
+    <string name="about_version">Versión %1s</string>
     <string name="about_copyright">\u24d2 GSam Labs 2015</string>
     <string name="about_chartengine">Motor de Gráficas por AChartEngine.org</string>
-    <string name="about_actionbar">Compatibilidad de la ActionBar por actionbarsherlock.com</string>
+    <string name="about_icons">Iconos por &lt;a href="https://plus.google.com/photos/117250163221109087714/albums/5509475934074997921"&gt;Marius Bozgan&lt;/a&gt;</string>
     <string name="about_translations">Traducciones:</string>
-    
+
     <!-- DashClock Widget Extension -->
     <string name="dashclock_description">Mostrar estadísticas de la batería incluyendo el tiempo restante, consumo por hora y más.</string>
     <string name="dashclock_active_standby">%1$s Activo, %2$s Reposo</string>
     <string name="dashclock_delta_per_hour_short">\u0394 %1$.1f%%/h</string>
     <string name="dashclock_delta_per_hour_short_full">Carga completada</string>
-    <string name="dashclock_delta_per_hour_charging">\u0394 %1$.1f%%/h - Cargando</string>  
-    <string name="dashclock_delta_per_hour_discharging">\u0394 %1$.1f%%/h - En descarga</string>  
-    <string name="dashclock_to_empty">%1$s hasta descarga</string>  
+    <string name="dashclock_delta_per_hour_charging">\u0394 %1$.1f%%/h - Cargando</string>
+    <string name="dashclock_delta_per_hour_discharging">\u0394 %1$.1f%%/h - En descarga</string>
+    <string name="dashclock_to_empty">%1$s hasta descarga</string>
     <string name="dashclock_to_full">%1$s hasta carga completa</string>
     <string name="dashclock_pref_show_used">mostrar cantidad usada</string>
     <string name="dashclock_pref_show_remaining_time">Mostrar tiempo restante</string>
     <string name="dashclock_pref_show_active_standby">Mostrar tiempos en reposo y activo</string>
     <string name="dashclock_pref_show_temp_voltage">Mostrar temperatura y voltaje</string>
     <string name="dashclock_settings">Ajustes de la extensión GSam</string>
-    
-    <!-- Translations & Translators -->   
-    <string name="lang_default">Idioma del Sistema</string>        
-    <string name="translator_anonymous">Anónimo</string>
+
+    <!-- Translations & Translators -->
+    <string name="lang_default">Default System Language</string>
+    <string name="translator_anonymous">Anonymous</string>
     <!-- NOTE: If they would like credit in the About screen, Translators can optionally put a name & optional HTML link.  You can have > 1 name, just use &lt;BR&gt; The key should be in the form 'translator_lang'-->
+    <string name="translator_ru">Dmitry Chernogaev &lt;a href=\"http://forum.xda-developers.com/member.php?u=4563466\"&gt;(gaich)&lt;/a&gt;</string>
+    <string name="translator_fr">Jaworski Johan</string>
+    <string name="translator_it">Fabio Abbà &lt;BR&gt; AlphaUMi</string>
+    <string name="translator_hu">István Kriskó (Stefi)</string>
+    <string name="translator_cs">Matěj Trakal (&lt;a href=\"http://mtrakal.cz\"&gt;mtrakal&lt;/a&gt;)</string>
+    <string name="translator_sv">Pontus Edgren  &lt;BR&gt; Göran Helsingborg</string>
+    <string name="translator_nl">ArTsLeOpS</string>
+    <string name="translator_iw">Michael Sandler (&lt;a href=\"http://sandler.in\"&gt;mich&lt;/a&gt;)</string>
+    <string name="translator_zh_CN">Gavin Fang &lt;BR&gt; myliyifei修补</string>
+    <string name="translator_tr">Saldıray Günal</string>
+    <string name="translator_pl">www.cvxcvx.pl</string>
+    <string name="translator_de">Jan Fortein</string>
     <string name="translator_es">Carlos Salazar (&lt;a href=\"http://about.me/carlos_salazar\"&gt;Ulric&lt;/a&gt;) &lt;BR&gt;
         Broquen (&lt;a href=\"http://forum.xda-developers.com/member.php?u=2695779\"&gt;broquen&lt;/a&gt;)</string>
+    <string name="translator_uk">Yaroslav Brukh</string>
+    <string name="translator_pt_PT">mandriva91</string>
+    <string name="translator_zh_TW">Andy~★</string>
+    <string name="translator_hy">Hrant Ohanyan »» &lt;a href=\"http://haysoft.org\"&gt;HaySoft&lt;/a&gt;</string>
+    <string name="translator_ca">Josep Rey Cases</string>
+    <string name="translator_sk">Pavol Šrank</string>
 
     <!-- Only Applicable to Paid/Pro Version (or marketing of said version) -->
     <string name="appdetail_details_adjust_screen_market_bsd_title">¿El brillo de tu pantalla está demasiado alto?</string>
@@ -406,7 +433,7 @@
     <string name="preferences_send_anon_stats_buypro_title">Hazla Pro!</string>
     <string name="preferences_send_anon_stats_buypro_msg">La versión gratuita de Battery Monitor no permite desactivar los anuncios si prefieres no permitir las estadísticas anónimas de uso.\n\nLa versión Pro no incluye anuncios, y te permitirá desactivar las estadísticas anónimas de uso.</string>
     <string name="menu_seeotherapps">Ver más aplicaciones de GSam Labs</string>
-    <string name="menu_gopro">Hazla Pro</string>
+    <string name="menu_gopro">Hazte Pro</string>
     <string name="menu_gopro_nook">Comprar</string>
     <string name="menu_goprokindle">Mejorar a Kindle Fire Edition</string>
     <string name="nook_gopro_title">Tiempo de prueba agotado</string>
@@ -421,7 +448,7 @@
     <string name="main_invalid_license_title">Licencia inválida</string>
     <string name="main_invalid_license_msg">Tu licencia no parece ser válida. El Battery Monitor continuará operando en modo gratuito. Si crees que es un error, por favor revisa tu compra.</string>
     <string name="main_invalid_license_ok">Revisar mi compra</string>
-    <string name="main_invalid_license_cancel">Continuar</string>    
+    <string name="main_invalid_license_cancel">Continuar</string>
     <string name="about_invalidlicense">No tienes una licencia válida. GSam Battery Monitor continuará operando en modo gratuito. Si crees que es un error, por favor contacta con el desarrollador con el Google Purchase ID</string>
 
     <!-- Action Bar - From a third party library, most of these aren't used but are included for completeness. -->
